@@ -32,18 +32,20 @@ namespace SimpleMusicPlayer
             appHelper.ConfigureApp(this, Assembly.GetExecutingAssembly().GetName().Name);
 
             // Enable Multi-JIT startup
-            var profileRoot = Path.Combine(appHelper.ApplicationPath, "ProfileOptimization");
+            var profileRoot = Path.Combine(appHelper.ApplicationDataPath(), "ProfileOptimization");
             Directory.CreateDirectory(profileRoot);
             // Define the folder where to save the profile files
             ProfileOptimization.SetProfileRoot(profileRoot);
             // Start profiling and save it in Startup.profile
             ProfileOptimization.StartProfile("Startup.profile");
         }
-
+        public static string[] Args { get; internal set; }
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
+            App.Args = e.Args;
+            //string[] arg1 = { "D:\\hamed\\Music\\audios\\AUD-20161112-WA0029.mp3" };
+            //App.Args = arg1;
             MainWindow = TinyIoCContainer.Current.Resolve<MainWindow>();
             MainWindow.Show();
         }

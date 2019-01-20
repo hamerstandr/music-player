@@ -86,5 +86,7 @@ namespace SimpleMusicPlayer.Views
             get { return ViewModel; }
             set { ViewModel = (MainViewModel)value; }
         }
+
+        
     }
 }

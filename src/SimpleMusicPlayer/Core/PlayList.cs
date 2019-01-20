@@ -20,7 +20,7 @@ namespace SimpleMusicPlayer.Core
         {
             try
             {
-                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationPath, PlayListFileName);
+                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), PlayListFileName);
                 if (!QuickIOFile.Exists(fileName))
                 {
                     return null;
@@ -43,7 +43,7 @@ namespace SimpleMusicPlayer.Core
         {
             try
             {
-                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationPath, PlayListFileName);
+                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), PlayListFileName);
                 LogHost.Default.Info("try saving play list to {0}", fileName);
                 using (StreamWriter file = QuickIOFile.CreateText(fileName))
                 {

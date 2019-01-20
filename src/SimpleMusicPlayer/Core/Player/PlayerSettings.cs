@@ -18,7 +18,7 @@ namespace SimpleMusicPlayer.Core.Player
         {
             try
             {
-                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationPath, PlayerSettings.SettingsFileName);
+                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), PlayerSettings.SettingsFileName);
                 if (settings == null || !QuickIOFile.Exists(fileName))
                 {
                     return settings;
@@ -55,7 +55,7 @@ namespace SimpleMusicPlayer.Core.Player
         {
             try
             {
-                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationPath, SettingsFileName);
+                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), SettingsFileName);
                 LogHost.Default.Info("saving player settings to {0}", fileName);
                 var settingsAsJson = JsonConvert.SerializeObject(this, Formatting.Indented);
                 QuickIOFile.WriteAllText(fileName, settingsAsJson);

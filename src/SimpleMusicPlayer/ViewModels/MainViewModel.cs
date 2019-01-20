@@ -25,7 +25,10 @@ namespace SimpleMusicPlayer.ViewModels
 
             this.ShowOnGitHubCmd = new DelegateCommand(this.ShowOnGitHub, () => true);
         }
-
+        public async System.Threading.Tasks.Task OpenArgsAsync()
+        {
+            await this.PlayListsViewModel.OpenFilesAsync(new System.Collections.Generic.List<string>(App.Args));
+        }
         public PlayerEngine PlayerEngine { get; private set; }
 
         public PlayerSettings PlayerSettings { get; private set; }

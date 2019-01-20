@@ -350,7 +350,33 @@ namespace SimpleMusicPlayer.ViewModels
                 }
             }
         }
+        public async Task OpenFilesAsync(List<string> fileOrDirDropList)
+        {
+            if (!this.FileSearchWorker.IsWorking)
+            {
+                var files = await this.FileSearchWorker.StartSearchAsync(fileOrDirDropList)
+                                      .ContinueWith(task => task.Result.OrderBy(f => f.FirstPerformer)
+                                                                .ThenBy(f => f.Album)
+                                                                .ThenBy(f => f.Disc)
+                                                                .ThenBy(f => f.Track));
 
+                var currentFilesCollView = this.FirstSimplePlaylistFiles as ICollectionView;
+
+                if (currentFilesCollView == null)
+                {
+                    var filesColl = new PlayListCollection(files);
+                    var filesCollView = CollectionViewSource.GetDefaultView(filesColl);
+                    this.FirstSimplePlaylistFiles = filesCollView;
+                    ((ICollectionView)this.FirstSimplePlaylistFiles).MoveCurrentTo(null);
+                }
+                else
+                {
+                    var destinationList = (QuickFillObservableCollection<IMediaFile>)currentFilesCollView.TryGetList();
+                    destinationList.AddItems(files, 0);
+                }
+                this.Play();
+            }
+        }
         private async Task HandleDropActionAsync(IDropInfo dropInfo, IList fileOrDirDropList)
         {
             if (!this.FileSearchWorker.IsWorking)
@@ -441,6 +467,8 @@ namespace SimpleMusicPlayer.ViewModels
             {
                 await this.HandleCommandLineArgsAsync(args);
             }
+            if(App.Args.Length>0)
+                await OpenFilesAsync(new System.Collections.Generic.List<string>(App.Args));
         }
 
         public bool SavePlayList()
