@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     /// <summary>
     /// Extension methods to get all types in an assembly

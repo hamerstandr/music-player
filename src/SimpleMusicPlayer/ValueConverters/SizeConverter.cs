@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SimpleMusicPlayer.ValueConverters
+namespace MusicPlayer.ValueConverters
 {
     public class SizeConverter : IValueConverter
     {

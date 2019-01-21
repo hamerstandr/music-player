@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public static class KeyHandlerExtensions
     {

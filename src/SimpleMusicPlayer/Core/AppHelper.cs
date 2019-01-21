@@ -10,7 +10,7 @@ using NLog.Targets;
 using Splat;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public sealed class AppHelper : IEnableLogger
     {

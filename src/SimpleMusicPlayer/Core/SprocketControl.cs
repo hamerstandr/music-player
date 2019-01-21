@@ -19,7 +19,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     /// <summary>
     /// Interaction logic for SprocketControl.xaml

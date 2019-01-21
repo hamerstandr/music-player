@@ -2,10 +2,10 @@
 using System.Windows.Media;
 using ControlzEx.Standard;
 using MahApps.Metro.Controls;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 using Splat;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class CustomWindowPlacementSettings : IWindowPlacementSettings, IEnableLogger
     {

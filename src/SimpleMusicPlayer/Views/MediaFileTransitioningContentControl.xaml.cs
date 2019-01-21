@@ -1,7 +1,7 @@
 ﻿using System;
 using MahApps.Metro.Controls;
 
-namespace SimpleMusicPlayer.Views
+namespace MusicPlayer.Views
 {
     public partial class MediaFileTransitioningContentControl : TransitioningContentControl
     {

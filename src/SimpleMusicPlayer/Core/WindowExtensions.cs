@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Windows.Interop;
 using Splat;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public static class WindowExtensions
     {

@@ -9,7 +9,7 @@ using SchwabenCode.QuickIO;
 using Splat;
 using TagLib;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class CoverManager : IEnableLogger
     {

@@ -14,13 +14,13 @@ using System.Windows.Input;
 using GongSolutions.Wpf.DragDrop;
 using GongSolutions.Wpf.DragDrop.Utilities;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.Core.Interfaces;
-using SimpleMusicPlayer.Core.Player;
+using MusicPlayer.Core;
+using MusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Player;
 using Splat;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.ViewModels
+namespace MusicPlayer.ViewModels
 {
     public class PlayListsViewModel : ReactiveObject, IDropTarget, IKeyHandler, IEnableLogger
     {
@@ -149,7 +149,13 @@ namespace SimpleMusicPlayer.ViewModels
                 this.playerEngine.Play(file);
             }
         }
-
+        private void Play(IMediaFile file)
+        {
+            if (file != null && this.SetCurrentPlayListFile(file))
+            {
+                this.playerEngine.Play(file);
+            }
+        }
         public void ResetCurrentItemAndSelection()
         {
             var fileCollView = this.FirstSimplePlaylistFiles as ICollectionView;
@@ -205,7 +211,19 @@ namespace SimpleMusicPlayer.ViewModels
 
             return false;
         }
+        private bool SetCurrentPlayListFile(MediaFile file)
+        {
+            if (file != null)
+            {
+                var fileCollView = this.FirstSimplePlaylistFiles as ICollectionView;
+                if (fileCollView != null)
+                {
+                    return fileCollView.MoveCurrentTo(file);
+                }
+            }
 
+            return false;
+        }
         public IMediaFile GetPrevPlayListFile()
         {
             var fileCollView = this.FirstSimplePlaylistFiles as ICollectionView;
@@ -469,6 +487,17 @@ namespace SimpleMusicPlayer.ViewModels
             }
             if(App.Args.Length>0)
                 await OpenFilesAsync(new System.Collections.Generic.List<string>(App.Args));
+            else
+            {
+                //var l = this.selectedPlayListFiles.ToList();
+                if(playList.Files.Count> playList.PlayListIndex)
+                {
+                    IMediaFile f = playList.Files[playList.PlayListIndex];
+                    Play(f);
+                }
+                
+                //Play(playList.SelectedPlayListFile);
+            }
         }
 
         public bool SavePlayList()
@@ -476,7 +505,7 @@ namespace SimpleMusicPlayer.ViewModels
             var currentFilesCollView = this.FirstSimplePlaylistFiles as ICollectionView;
             if (currentFilesCollView != null)
             {
-                var pl = new PlayList { Files = currentFilesCollView.SourceCollection.OfType<MediaFile>().ToList() };
+                var pl = new PlayList { Files = currentFilesCollView.SourceCollection.OfType<MediaFile>().ToList(), PlayListIndex = this.SelectedPlayListFile.PlayListIndex-1 };
                 return PlayList.Save(pl);
             }
             return false;

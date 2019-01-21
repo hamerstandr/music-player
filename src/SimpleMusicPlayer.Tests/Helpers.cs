@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core;
+using MusicPlayer.Core.Interfaces;
 
 namespace SimpleMusicPlayer.Tests
 {

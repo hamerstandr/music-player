@@ -7,7 +7,7 @@ using SchwabenCode.QuickIO;
 using Splat;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class PlayList
     {
@@ -15,7 +15,7 @@ namespace SimpleMusicPlayer.Core
         public const string PlayListFileName = "playlist.smppl";
 
         public List<MediaFile> Files { get; set; }
-
+        public int PlayListIndex { get; set; }
         public static async Task<PlayList> LoadAsync()
         {
             try

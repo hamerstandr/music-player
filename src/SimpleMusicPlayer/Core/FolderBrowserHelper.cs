@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public static class FolderBrowserHelper
     {

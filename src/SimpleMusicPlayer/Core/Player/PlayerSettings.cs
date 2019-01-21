@@ -6,11 +6,11 @@ using ControlzEx.Standard;
 using Newtonsoft.Json;
 using ReactiveUI;
 using SchwabenCode.QuickIO;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 using Splat;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.Core.Player
+namespace MusicPlayer.Core.Player
 {
     public static class PlayerSettingsExtensions
     {
@@ -20,6 +20,30 @@ namespace SimpleMusicPlayer.Core.Player
             {
                 var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), PlayerSettings.SettingsFileName);
                 if (settings == null || !QuickIOFile.Exists(fileName))
+                {
+                    return settings;
+                }
+                LogHost.Default.Info("loading player settings from {0}", fileName);
+                var jsonString = QuickIOFile.ReadAllText(fileName);
+                var fromThis = JsonConvert.DeserializeObject<PlayerSettings>(jsonString);
+
+                settings.MainWindow = fromThis.MainWindow;
+                settings.Medialib = fromThis.Medialib;
+                settings.PlayerEngine = fromThis.PlayerEngine;
+            }
+            catch (Exception exception)
+            {
+                LogHost.Default.ErrorException("could not load player settings", exception);
+            }
+            return settings;
+        }
+        public static PlayerSettings Load()
+        {
+            PlayerSettings settings=new PlayerSettings();
+            try
+            {
+                var fileName = Path.Combine(TinyIoCContainer.Current.Resolve<AppHelper>().ApplicationDataPath(), PlayerSettings.SettingsFileName);
+                if (!QuickIOFile.Exists(fileName))
                 {
                     return settings;
                 }
@@ -49,6 +73,8 @@ namespace SimpleMusicPlayer.Core.Player
             this.MainWindow = new MainWindowSettings();
             this.Medialib = new MedialibSettings();
             this.PlayerEngine = new PlayerEngineSettings();
+            AccentColor = new AccentColor() { Name = "Green", TranslatedName = "Green" };
+            AppThemes = "BaseDark";
         }
 
         public void Save()
@@ -65,20 +91,24 @@ namespace SimpleMusicPlayer.Core.Player
                 LogHost.Default.Error("could not save player settings", exception);
             }
         }
-
+        public AccentColor AccentColor { get; set; }
+        public string AppThemes { get; set; }
         public MainWindowSettings MainWindow { get; set; }
 
         public MedialibSettings Medialib { get; set; }
 
         public PlayerEngineSettings PlayerEngine { get; set; }
+        public bool IsEnabled { get; internal set; }
 
         public static PlayerSettings GetEmptySettings()
         {
             return new PlayerSettings {
                 MainWindow = new MainWindowSettings(),
                 Medialib = new MedialibSettings(),
-                PlayerEngine = new PlayerEngineSettings()
-            };
+                PlayerEngine = new PlayerEngineSettings(),
+                AccentColor = new AccentColor() { Name = "Green", TranslatedName = "Green" },
+                AppThemes = "BaseDark"
+        };
         }
     }
 

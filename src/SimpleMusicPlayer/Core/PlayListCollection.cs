@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class PlayListCollection : QuickFillObservableCollection<IMediaFile>
     {

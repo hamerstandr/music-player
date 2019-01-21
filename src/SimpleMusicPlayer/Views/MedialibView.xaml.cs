@@ -6,10 +6,10 @@ using System.Windows;
 using System.Windows.Interop;
 using MahApps.Metro.Controls;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.ViewModels;
+using MusicPlayer.Core;
+using MusicPlayer.ViewModels;
 
-namespace SimpleMusicPlayer.Views
+namespace MusicPlayer.Views
 {
     /// <summary>
     /// Interaction logic for MedialibView.xaml

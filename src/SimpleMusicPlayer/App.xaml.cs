@@ -6,13 +6,14 @@ using System.Runtime;
 using System.Windows;
 using Microsoft.Shell;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.Core.Player;
-using SimpleMusicPlayer.ViewModels;
-using SimpleMusicPlayer.Views;
+using MusicPlayer.Core;
+using MusicPlayer.Core.Player;
+using MusicPlayer.ViewModels;
+using MusicPlayer.Views;
 using TinyIoC;
+using MahApps.Metro;
 
-namespace SimpleMusicPlayer
+namespace MusicPlayer
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -44,6 +45,23 @@ namespace SimpleMusicPlayer
         {
             base.OnStartup(e);
             App.Args = e.Args;
+            // get the current app style (theme and accent) from the application
+            // you can then use the current theme and custom accent instead set a new theme
+            Tuple<AppTheme, Accent> appStyle = ThemeManager.DetectAppStyle(Application.Current);
+            PlayerSettings settings;
+            settings=PlayerSettingsExtensions.Load();
+            // now set the Green accent and dark theme
+            if(settings.AccentColor!=null)
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                        ThemeManager.GetAccent(settings.AccentColor.Name),
+                                        ThemeManager.GetAppTheme(settings.AppThemes)); // or appStyle.Item1
+            else
+            {
+                // set the Red accent and dark theme only to the current window
+                ThemeManager.ChangeAppStyle(this,
+                                            ThemeManager.GetAccent("Green"),
+                                            ThemeManager.GetAppTheme("BaseDark"));
+            }
             //string[] arg1 = { "D:\\hamed\\Music\\audios\\AUD-20161112-WA0029.mp3" };
             //App.Args = arg1;
             MainWindow = TinyIoCContainer.Current.Resolve<MainWindow>();
@@ -67,14 +85,14 @@ namespace SimpleMusicPlayer
             {
                 WindowExtensions.ShowAndActivate(this.MainWindow);
             }
-            return this.ProcessCommandLineArgs(this.MainWindow as SimpleMusicPlayer.Views.MainWindow, args);
+            return this.ProcessCommandLineArgs(this.MainWindow as MusicPlayer.Views.MainWindow, args);
         }
 
-        private bool ProcessCommandLineArgs(SimpleMusicPlayer.Views.MainWindow window, IEnumerable<string> args)
+        private bool ProcessCommandLineArgs(MusicPlayer.Views.MainWindow window, IEnumerable<string> args)
         {
             if (window != null)
             {
-                var vm = window.DataContext as SimpleMusicPlayer.ViewModels.MainViewModel;
+                var vm = window.DataContext as MusicPlayer.ViewModels.MainViewModel;
                 if (vm != null)
                 {
                     vm.PlayListsViewModel.CommandLineArgs = new ReactiveList<string>(args);

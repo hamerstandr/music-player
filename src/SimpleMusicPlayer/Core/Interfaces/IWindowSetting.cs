@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using ControlzEx.Standard;
 
-namespace SimpleMusicPlayer.Core.Interfaces
+namespace MusicPlayer.Core.Interfaces
 {
     public interface IWindowSetting
     {

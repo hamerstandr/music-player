@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.ViewModels;
+using MusicPlayer.Core;
+using MusicPlayer.ViewModels;
 using Xunit;
 
 namespace SimpleMusicPlayer.Tests

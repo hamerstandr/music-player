@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     /// <summary>
     /// thx to Sacha Barber  http://sachabarber.net

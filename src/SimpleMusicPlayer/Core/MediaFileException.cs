@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     [Serializable]
     public class MediaFileException : Exception

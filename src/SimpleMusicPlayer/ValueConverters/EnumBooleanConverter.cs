@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Windows;
 
-namespace SimpleMusicPlayer.ValueConverters
+namespace MusicPlayer.ValueConverters
 {
     /// <summary>
     /// special converter: converts enums to bool according to the parameter given

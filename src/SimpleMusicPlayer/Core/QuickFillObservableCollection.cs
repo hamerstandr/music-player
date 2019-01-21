@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Threading;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class QuickFillObservableCollection<T> : ObservableCollection<T>
     {

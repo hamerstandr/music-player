@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using SimpleMusicPlayer.Core;
+using MusicPlayer.Core;
 
-namespace SimpleMusicPlayer.ValueConverters
+namespace MusicPlayer.ValueConverters
 {
     public class PlayerStateToToolTipConverter : IValueConverter
     {

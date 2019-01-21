@@ -9,7 +9,7 @@ using System.Windows.Threading;
 using ReactiveUI;
 using Splat;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class BaseListBox : ListBox, IEnableLogger
     {

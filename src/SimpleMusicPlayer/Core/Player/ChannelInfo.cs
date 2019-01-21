@@ -2,10 +2,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using FMOD;
-using SimpleMusicPlayer.Core.Interfaces;
-using SimpleMusicPlayer.FMODStudio;
+using MusicPlayer.Core.Interfaces;
+using MusicPlayer.FMODStudio;
 
-namespace SimpleMusicPlayer.Core.Player
+namespace MusicPlayer.Core.Player
 {
     internal class ChannelInfo
     {

@@ -12,7 +12,7 @@ using MahApps.Metro.Controls;
 using ReactiveUI;
 using Splat;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class BaseListView : ListView, IEnableLogger
     {

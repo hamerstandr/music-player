@@ -10,10 +10,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using ReactiveUI;
 using SchwabenCode.QuickIO;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 using Splat;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class FileSearchWorker : ReactiveObject, IEnableLogger
     {

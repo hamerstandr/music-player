@@ -2,9 +2,9 @@
 using System.Windows;
 using MahApps.Metro.SimpleChildWindow;
 using ReactiveUI;
-using SimpleMusicPlayer.ViewModels;
+using MusicPlayer.ViewModels;
 
-namespace SimpleMusicPlayer.Views
+namespace MusicPlayer.Views
 {
     /// <summary>
     /// Interaction logic for EqualizerView.xaml

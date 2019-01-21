@@ -6,10 +6,10 @@ using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using ReactiveUI;
 using SchwabenCode.QuickIO;
-using SimpleMusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Interfaces;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public class MediaFile : ReactiveObject, IMediaFile
     {

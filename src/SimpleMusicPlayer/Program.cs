@@ -2,7 +2,7 @@
 using System.Runtime.Remoting;
 using Microsoft.Shell;
 
-namespace SimpleMusicPlayer
+namespace MusicPlayer
 {
     public class Program
     {

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.Core.Interfaces;
-using SimpleMusicPlayer.Core.Player;
+using MusicPlayer.Core;
+using MusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Player;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.ViewModels
+namespace MusicPlayer.ViewModels
 {
     public class MedialibViewModel : ReactiveObject
     {

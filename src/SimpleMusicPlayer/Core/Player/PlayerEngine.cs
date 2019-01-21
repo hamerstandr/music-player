@@ -4,11 +4,11 @@ using System.Windows;
 using System.Windows.Threading;
 using FMOD;
 using ReactiveUI;
-using SimpleMusicPlayer.Core.Interfaces;
-using SimpleMusicPlayer.FMODStudio;
+using MusicPlayer.Core.Interfaces;
+using MusicPlayer.FMODStudio;
 using Splat;
 
-namespace SimpleMusicPlayer.Core.Player
+namespace MusicPlayer.Core.Player
 {
     public static class PlayerEngineExtensions
     {

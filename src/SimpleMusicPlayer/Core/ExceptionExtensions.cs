@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public static class ExceptionExtensions
     {

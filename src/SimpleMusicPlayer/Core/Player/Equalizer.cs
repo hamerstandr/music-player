@@ -2,9 +2,9 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using ReactiveUI;
-using SimpleMusicPlayer.FMODStudio;
+using MusicPlayer.FMODStudio;
 
-namespace SimpleMusicPlayer.Core.Player
+namespace MusicPlayer.Core.Player
 {
     public class Equalizer : ReactiveObject
     {

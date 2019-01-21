@@ -4,9 +4,9 @@ using System.Reactive.Linq;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using ReactiveUI;
-using SimpleMusicPlayer.ViewModels;
+using MusicPlayer.ViewModels;
 
-namespace SimpleMusicPlayer.Views
+namespace MusicPlayer.Views
 {
     /// <summary>
     /// Interaction logic for PlayControlView.xaml

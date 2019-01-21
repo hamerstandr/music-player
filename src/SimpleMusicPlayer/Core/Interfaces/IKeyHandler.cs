@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace SimpleMusicPlayer.Core.Interfaces
+namespace MusicPlayer.Core.Interfaces
 {
     public interface IKeyHandler
     {

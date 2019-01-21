@@ -2,9 +2,9 @@ using System;
 using System.Globalization;
 using FMOD;
 using ReactiveUI;
-using SimpleMusicPlayer.FMODStudio;
+using MusicPlayer.FMODStudio;
 
-namespace SimpleMusicPlayer.Core.Player
+namespace MusicPlayer.Core.Player
 {
     public class EqualizerBand : ReactiveObject
     {

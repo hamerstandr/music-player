@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SimpleMusicPlayer.FMODStudio
+namespace MusicPlayer.FMODStudio
 {
     public static class FMODExtensions
     {

@@ -3,7 +3,7 @@
                     xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     mc:Ignorable="options"
-                    xmlns:core="clr-namespace:SimpleMusicPlayer.Core"
+                    xmlns:core="clr-namespace:MusicPlayer.Core"
                     xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls">
 
     <ResourceDictionary.MergedDictionaries>
@@ -11,10 +11,10 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Themes/WindowCommands.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Resources/Controls.BaseListView.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Resources/Controls.BaseListBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Resources/Controls.Slider.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Resources/Controls.Tooltip.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Resources/Controls.BaseListView.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Resources/Controls.BaseListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Resources/Controls.Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Resources/Controls.Tooltip.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -96,5 +96,13 @@
            BasedOn="{StaticResource BaseMetroListBox}" />
     <Style TargetType="ToolTip"
            BasedOn="{StaticResource BaseMetroToolTip}" />
-
+    <Style BasedOn="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}"
+                TargetType="{x:Type Controls:ToggleSwitch}">
+        <Setter Property="Padding" Value="0 0 10 0" />
+        <Style.Triggers>
+            <Trigger Property="ContentDirection" Value="RightToLeft">
+                <Setter Property="Padding" Value="10 0 0 0" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

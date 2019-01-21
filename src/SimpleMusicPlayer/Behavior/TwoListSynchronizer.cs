@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 
-namespace SimpleMusicPlayer.Behavior
+namespace MusicPlayer.Behavior
 {
     /// <summary>
     /// Keeps two lists synchronized. 

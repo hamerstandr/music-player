@@ -6,13 +6,13 @@ using System.Windows.Input;
 using MahApps.Metro.Controls;
 using MahApps.Metro.SimpleChildWindow;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.Core.Interfaces;
-using SimpleMusicPlayer.Core.Player;
-using SimpleMusicPlayer.Views;
+using MusicPlayer.Core;
+using MusicPlayer.Core.Interfaces;
+using MusicPlayer.Core.Player;
+using MusicPlayer.Views;
 using TinyIoC;
 
-namespace SimpleMusicPlayer.ViewModels
+namespace MusicPlayer.ViewModels
 {
     public class PlayControlViewModel : ReactiveObject, IKeyHandler
     {
@@ -208,14 +208,42 @@ namespace SimpleMusicPlayer.ViewModels
                     break;
                 case Key.S:
                     break;
-                case Key.J:
+                case Key.NumPad3:
                     handled = this.PlayNextCommand.CanExecute(null);
                     if (handled)
                     {
                         this.PlayNextCommand.Execute(null);
                     }
                     break;
-                case Key.K:
+                case Key.NumPad1:
+                    handled = this.PlayPrevCommand.CanExecute(null);
+                    if (handled)
+                    {
+                        this.PlayPrevCommand.Execute(null);
+                    }
+                    break;
+                case Key.D3:
+                    handled = this.PlayNextCommand.CanExecute(null);
+                    if (handled)
+                    {
+                        this.PlayNextCommand.Execute(null);
+                    }
+                    break;
+                case Key.D1:
+                    handled = this.PlayPrevCommand.CanExecute(null);
+                    if (handled)
+                    {
+                        this.PlayPrevCommand.Execute(null);
+                    }
+                    break;
+                case Key.MediaNextTrack:
+                    handled = this.PlayNextCommand.CanExecute(null);
+                    if (handled)
+                    {
+                        this.PlayNextCommand.Execute(null);
+                    }
+                    break;
+                case Key.MediaPreviousTrack:
                     handled = this.PlayPrevCommand.CanExecute(null);
                     if (handled)
                     {

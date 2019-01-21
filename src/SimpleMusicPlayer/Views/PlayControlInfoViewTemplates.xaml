@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:models="clr-namespace:SimpleMusicPlayer.Core"
-                    xmlns:valueConverters="clr-namespace:SimpleMusicPlayer.ValueConverters"
-                    xmlns:ViewModels="clr-namespace:SimpleMusicPlayer.ViewModels"
-                    xmlns:views="clr-namespace:SimpleMusicPlayer.Views">
+                    xmlns:models="clr-namespace:MusicPlayer.Core"
+                    xmlns:valueConverters="clr-namespace:MusicPlayer.ValueConverters"
+                    xmlns:ViewModels="clr-namespace:MusicPlayer.ViewModels"
+                    xmlns:views="clr-namespace:MusicPlayer.Views">
 
     <DataTemplate x:Key="fileInfoRightTemplate"
                   DataType="{x:Type models:MediaFile}">

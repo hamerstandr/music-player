@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     /// <summary>
     /// A Slider which provides a way to modify the 

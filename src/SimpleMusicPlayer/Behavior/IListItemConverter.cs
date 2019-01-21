@@ -1,4 +1,4 @@
-namespace SimpleMusicPlayer.Behavior
+namespace MusicPlayer.Behavior
 {
     /// <summary>
     /// Converts items in the Master list to Items in the target list, and back again.

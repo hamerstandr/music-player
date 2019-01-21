@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:viewModels="clr-namespace:SimpleMusicPlayer.ViewModels"
-                    xmlns:valueConverters="clr-namespace:SimpleMusicPlayer.ValueConverters"
-                    xmlns:models="clr-namespace:SimpleMusicPlayer.Core"
-                    xmlns:behavior="clr-namespace:SimpleMusicPlayer.Behavior"
+                    xmlns:viewModels="clr-namespace:MusicPlayer.ViewModels"
+                    xmlns:valueConverters="clr-namespace:MusicPlayer.ValueConverters"
+                    xmlns:models="clr-namespace:MusicPlayer.Core"
+                    xmlns:behavior="clr-namespace:MusicPlayer.Behavior"
                     xmlns:dragDrop="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
                     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                     xmlns:controlzex="urn:controlzex">

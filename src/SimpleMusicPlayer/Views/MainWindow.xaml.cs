@@ -5,11 +5,11 @@ using System.Windows;
 using System.Windows.Input;
 using MahApps.Metro.Controls;
 using ReactiveUI;
-using SimpleMusicPlayer.Core;
-using SimpleMusicPlayer.ViewModels;
+using MusicPlayer.Core;
+using MusicPlayer.ViewModels;
 using Splat;
 
-namespace SimpleMusicPlayer.Views
+namespace MusicPlayer.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

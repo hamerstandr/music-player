@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace SimpleMusicPlayer.ViewModels
+namespace MusicPlayer.ViewModels
 {
     public class PlayControlInfoViewModel : ReactiveObject
     {

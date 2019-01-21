@@ -1,9 +1,9 @@
 ﻿using System.Reactive;
 using ReactiveUI;
-using SimpleMusicPlayer.Core.Player;
+using MusicPlayer.Core.Player;
 using ReactiveCommand = ReactiveUI.ReactiveCommand;
 
-namespace SimpleMusicPlayer.ViewModels
+namespace MusicPlayer.ViewModels
 {
     public class EqualizerViewModel : ReactiveObject
     {

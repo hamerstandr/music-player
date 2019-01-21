@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{0D965803-90D5-478F-AE29-E505C08A19F0}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMusicPlayer", "SimpleMusicPlayer\SimpleMusicPlayer.csproj", "{06E30367-00AC-4FC1-8A4F-13A98CBD441D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer", "SimpleMusicPlayer\MusicPlayer.csproj", "{06E30367-00AC-4FC1-8A4F-13A98CBD441D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMusicPlayer.Tests", "SimpleMusicPlayer.Tests\SimpleMusicPlayer.Tests.csproj", "{488A0721-87EE-415B-BE43-F0996436E74C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer.Tests", "SimpleMusicPlayer.Tests\MusicPlayer.Tests.csproj", "{488A0721-87EE-415B-BE43-F0996436E74C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,5 +39,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A20D73CF-C96D-4F92-8681-5636145D3DDA}
 	EndGlobalSection
 EndGlobal

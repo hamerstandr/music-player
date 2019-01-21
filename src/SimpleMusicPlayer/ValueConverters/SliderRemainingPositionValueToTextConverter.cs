@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SimpleMusicPlayer.ValueConverters
+namespace MusicPlayer.ValueConverters
 {
     public class SliderRemainingPositionValueToTextConverter : IMultiValueConverter
     {

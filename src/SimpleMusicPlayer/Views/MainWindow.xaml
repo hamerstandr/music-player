@@ -1,13 +1,13 @@
-﻿<Controls:MetroWindow x:Class="SimpleMusicPlayer.Views.MainWindow"
+﻿<Controls:MetroWindow x:Class="MusicPlayer.Views.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:ViewModels="clr-namespace:SimpleMusicPlayer.ViewModels"
-                      xmlns:Views="clr-namespace:SimpleMusicPlayer.Views"
-                      xmlns:ValueConverters="clr-namespace:SimpleMusicPlayer.ValueConverters"
-                      xmlns:core="clr-namespace:SimpleMusicPlayer.Core"
+                      xmlns:ViewModels="clr-namespace:MusicPlayer.ViewModels"
+                      xmlns:Views="clr-namespace:MusicPlayer.Views"
+                      xmlns:ValueConverters="clr-namespace:MusicPlayer.ValueConverters"
+                      xmlns:core="clr-namespace:MusicPlayer.Core"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       Title="Simple Music Player"
                       TitleTemplate="{StaticResource WindowTitleDataTemplate}"
@@ -28,8 +28,8 @@
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Views/PlayControlInfoViewTemplates.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/SimpleMusicPlayer;component/Views/PlaylistsViewTemplates.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Views/PlayControlInfoViewTemplates.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Views/PlaylistsViewTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <ValueConverters:NullVisibilityConverter x:Key="NullToVisibleVisibilityConverter"
@@ -39,9 +39,9 @@
 
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button ToolTip="Simple Music Player on GitHub"
-                    Command="{Binding ShowOnGitHubCmd}">
-                <iconPacks:PackIconOcticons Kind="MarkGithub" Width="20" Height="20" />
+            <Button ToolTip="Settings"
+                    Command="{Binding ShowOnSettingCmd}">
+                <iconPacks:PackIconOcticons Kind="Settings" Width="20" Height="20" />
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     public static class VisualExtensions
     {

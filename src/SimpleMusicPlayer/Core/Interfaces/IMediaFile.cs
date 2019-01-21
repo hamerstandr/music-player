@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media.Imaging;
 
-namespace SimpleMusicPlayer.Core.Interfaces
+namespace MusicPlayer.Core.Interfaces
 {
     public interface IMediaFile
     {

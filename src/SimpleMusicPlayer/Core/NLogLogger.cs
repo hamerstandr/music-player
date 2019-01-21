@@ -2,7 +2,7 @@
 using NLog;
 using LogLevel = Splat.LogLevel;
 
-namespace SimpleMusicPlayer.Core
+namespace MusicPlayer.Core
 {
     internal class NLogLogger : Splat.ILogger
     {

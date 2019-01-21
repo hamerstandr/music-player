@@ -1,4 +1,4 @@
-﻿namespace SimpleMusicPlayer.Core
+﻿namespace MusicPlayer.Core
 {
     public enum PlayerState
     {
