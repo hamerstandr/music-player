@@ -20,9 +20,9 @@
                 <ComboBox Width="100"
                                       Margin="0,5,0,0"
                                       HorizontalAlignment="Left"
-                                      DisplayMemberPath="TranslatedName"
+
                                       ItemsSource="{Binding AppThemes}"
-                                      SelectedItem="{Binding SelectedAppTheme}">
+                                      SelectedItem="{Binding SelectedAppTheme,Mode=OneWay}" SelectionChanged="ComboBox_SelectionChanged_1">
                     <ComboBox.GroupStyle>
                         <GroupStyle>
                             <GroupStyle.HeaderTemplate>
@@ -43,7 +43,7 @@
                                   Margin="0,5,10,0"
                                   HorizontalAlignment="Left"
                                   ItemsSource="{Binding AccentColors}"
-                                  SelectedItem="{Binding SelectedAccentColor}">
+                                  SelectedItem="{Binding SelectedAccentColor,Mode=OneWay}" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel>

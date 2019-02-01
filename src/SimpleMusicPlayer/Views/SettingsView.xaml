@@ -11,7 +11,7 @@
                       ShowIconOnTitleBar="False"
                       WindowStartupLocation="CenterScreen"
         Title="SettingsView" Height="450" Width="800" 
-                      d:DataContext="{d:DesignInstance viewModels:SettingsViewModel}" 
+                      d:DataContext="{d:DesignInstance viewModels:SettingsViewModel}" Background="{DynamicResource PlayListToolTipBackground}" 
                       ><!--Icon="{iconPacks:Octicons Settings}"-->
     <Grid>
         <Grid.RowDefinitions>
@@ -19,67 +19,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <!--<iconPacks:PackIconOcticons Kind="Settings" Width="20" Height="20"  />-->
-        <Grid Background="Red" Visibility="Visible">
-            <StackPanel>
-                <StackPanel Margin="0,10,0,0" Orientation="Vertical" Background="Blue">
-                    <TextBlock VerticalAlignment="Center" Text="Theme" Foreground="{StaticResource SemiTextColorBrush}" />
-                    <ComboBox Width="100"
-                                      Margin="0,5,0,0"
-                                      HorizontalAlignment="Left"
-                                      DisplayMemberPath="TranslatedName"
-                                      ItemsSource="{Binding AppThemes}"
-                                      SelectedItem="{Binding SelectedAppTheme}">
-                        <ComboBox.GroupStyle>
-                            <GroupStyle>
-                                <GroupStyle.HeaderTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Margin="2,5,0,2"
-                                                           FontSize="14"
-                                                           FontWeight="Bold"
-                                                           Text="{Binding Name}" />
-                                    </DataTemplate>
-                                </GroupStyle.HeaderTemplate>
-                            </GroupStyle>
-                        </ComboBox.GroupStyle>
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Margin="0,15,0,0" Text="Accent Color" Foreground="{StaticResource SemiTextColorBrush}" />
-                    <ComboBox Width="300"
-                                  Margin="0,5,10,0"
-                                  HorizontalAlignment="Left"
-                                  ItemsSource="{Binding AccentColors}"
-                                  SelectedItem="{Binding SelectedAccentColor}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <DockPanel>
-                                    <Ellipse Width="16"
-                                                 Height="16"
-                                                 Margin="2,0,10,0"
-                                                 Fill="{Binding ColorBrush}" />
-                                    <TextBlock Text="{Binding TranslatedName}" />
-                                </DockPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                        <ComboBox.GroupStyle>
-                            <GroupStyle >
-                                <GroupStyle.HeaderTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Margin="2,5,0,2"
-                                                       FontSize="14"
-                                                       FontWeight="Bold"
-                                                       Text="{Binding Name}" />
-                                    </DataTemplate>
-                                </GroupStyle.HeaderTemplate>
-                            </GroupStyle>
-                        </ComboBox.GroupStyle>
-                    </ComboBox>
-                </StackPanel>
-            </StackPanel>
-
-
-
-        </Grid>
+        <local:SettingsControlView/>
         <UniformGrid Grid.Row="1">
             <Button Content="_Default"
                     Margin="0,0,2,0"

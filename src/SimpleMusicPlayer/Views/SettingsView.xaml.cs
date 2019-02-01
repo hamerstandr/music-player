@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.SimpleChildWindow;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.SimpleChildWindow;
 using MusicPlayer.ViewModels;
 using ReactiveUI;
 using System;
@@ -9,7 +10,7 @@ namespace MusicPlayer.Views
     /// <summary>
     /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : IViewFor<SettingsViewModel>
+    public partial class SettingsView /*: MetroWindow, IViewFor<SettingsViewModel>*/
     {
         public SettingsView()
         {
@@ -18,7 +19,7 @@ namespace MusicPlayer.Views
 
             this.WhenAnyValue(x => x.ViewModel).BindTo(this, x => x.DataContext);
 
-            this.WhenActivated(d => this.WhenAnyValue(x => x.ViewModel).Subscribe(vm => vm.CloseEqualizerCommand.Subscribe(_ => Close())));
+            //this.WhenActivated(d => this.WhenAnyValue(x => x.ViewModel).Subscribe(vm => vm.CloseEqualizerCommand.Subscribe(_ => Close())));
         }
         public SettingsViewModel ViewModel
         {
@@ -27,12 +28,12 @@ namespace MusicPlayer.Views
         }
 
         public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register("ViewModel", typeof(SettingsViewModel), typeof(EqualizerView), new PropertyMetadata(null));
+            DependencyProperty.Register("ViewModel", typeof(SettingsViewModel), typeof(SettingsView), new PropertyMetadata(null));
 
-        object IViewFor.ViewModel
-        {
-            get { return ViewModel; }
-            set { ViewModel = (SettingsViewModel)value; }
-        }
+        //object IViewFor.ViewModel
+        //{
+        //    get { return ViewModel; }
+        //    set { ViewModel = (SettingsViewModel)value; }
+        //}
     }
 }

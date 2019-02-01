@@ -23,6 +23,7 @@ namespace MusicPlayer.ViewModels
 
             CloseEqualizerCommand = ReactiveCommand.Create(
                 () => Settings.Save());
+            this.Settings = Settings;
             Refresh();
         }
 
@@ -38,7 +39,7 @@ namespace MusicPlayer.ViewModels
                 Settings.AccentColor = value;
                 ThemeManager.ChangeAppStyle(Application.Current,
                                         ThemeManager.GetAccent(value.Name),
-                                        ThemeManager.GetAppTheme("BaseLight")); // or appStyle.Item1
+                                        ThemeManager.GetAppTheme(Settings.AppThemes)); // or appStyle.Item1
             }
         }
         public ObservableCollection<string> AppThemes
@@ -51,7 +52,13 @@ namespace MusicPlayer.ViewModels
         public string SelectedAppTheme
         {
             get => Settings.AppThemes;
-            set => Settings.AppThemes = value;
+            set
+            {
+                Settings.AppThemes = value;
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                        ThemeManager.GetAccent(Settings.AccentColor.Name),
+                                        ThemeManager.GetAppTheme(value)); // or appStyle.Item1
+            }
         }
         public void Refresh()
         {

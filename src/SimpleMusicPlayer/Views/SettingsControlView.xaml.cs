@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MusicPlayer.Core;
+using MusicPlayer.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,22 @@ namespace MusicPlayer.Views
         public SettingsControlView()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var c = sender as ComboBox;
+            var i=c.SelectedItem as AccentColor;
+            SettingsViewModel M = this.DataContext as SettingsViewModel;
+            M.SelectedAccentColor = i;
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            var c = sender as ComboBox;
+            var i = c.SelectedItem as string;
+            SettingsViewModel M = this.DataContext as SettingsViewModel;
+            M.SelectedAppTheme = i;
         }
     }
 }
